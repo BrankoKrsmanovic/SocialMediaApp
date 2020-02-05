@@ -17,5 +17,3 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/person/{user}', 'ProfilesController@index');
-Route::get('/profile/{user}/edit', 'ProfilesController@edit');

@@ -13,10 +13,13 @@
 
                     <div class="d-flex align-items-center pb-4">
                         <div class="h4 mr-2">{{$user->username}}</div>
-
-                        <a href="/p/create">Add new post</a>
                     </div>
+
+                    <a href="/p/create">Add new post</a>
+
                 </div>
+
+                <a href="/profile/{{$user->id}}/edit">Edit profile</a>
 
                 <div class="d-flex">
                     <div class="pr-sm-5">
