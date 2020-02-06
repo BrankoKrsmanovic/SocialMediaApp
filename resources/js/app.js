@@ -23,6 +23,7 @@ Vue.component('follow-button', require('./components/FollowButton.vue').default)
 Vue.component('profile-stats', require('./components/ProfileStats.vue').default);
 Vue.component('single-post', require('./components/SinglePost.vue').default);
 Vue.component('find-users', require('./components/FindUsers.vue').default);
+Vue.component('indexed-post', require('./components/IndexedPost.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

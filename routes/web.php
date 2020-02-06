@@ -32,4 +32,6 @@ Route::get('/api/like/{post}', 'ApiController@getNumberOfLikes');
 Route::delete('/api/post/{post}', 'ApiController@destroy');
 Route::get('/api/profile/{criteria}', 'ApiController@getProfiles');
 
+Route::get('/', 'PostsController@index');
+
 
