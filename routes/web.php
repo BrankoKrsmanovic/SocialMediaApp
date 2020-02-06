@@ -30,5 +30,6 @@ Route::post('/api/follow/{user}', 'ApiController@followUser');
 Route::post('/api/like/{post}', 'ApiController@likePost');
 Route::get('/api/like/{post}', 'ApiController@getNumberOfLikes');
 Route::delete('/api/post/{post}', 'ApiController@destroy');
+Route::get('/api/profile/{criteria}', 'ApiController@getProfiles');
 
 
