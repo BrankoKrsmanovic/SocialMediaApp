@@ -15,7 +15,7 @@
                         <div class="h4 mr-2">{{$user->username}}</div>
                     </div>
 
-                    <a href="/p/create">Add new post</a>
+                    <a href="/post/create">Add new post</a>
 
                 </div>
 
@@ -43,21 +43,13 @@
             </div>
 
             <div class="row pt-sm-5">
-                <div class="col-4 pb-4">
-                    <img
-                        src="https://instagram.fbeg4-1.fna.fbcdn.net/v/t51.2885-15/e35/80567208_1398308817014780_3527894357366973531_n.jpg?_nc_ht=instagram.fbeg4-1.fna.fbcdn.net&_nc_cat=108&_nc_ohc=kvi14NKw_uUAX9oDx2o&oh=63312a6eea7056ebcc4d8ae88d0a230b&oe=5EB586AD"
-                        class="w-100">
-                </div>
-                <div class="col-4 pb-4">
-                    <img
-                        src="https://instagram.fbeg4-1.fna.fbcdn.net/v/t51.2885-15/e35/80567208_1398308817014780_3527894357366973531_n.jpg?_nc_ht=instagram.fbeg4-1.fna.fbcdn.net&_nc_cat=108&_nc_ohc=kvi14NKw_uUAX9oDx2o&oh=63312a6eea7056ebcc4d8ae88d0a230b&oe=5EB586AD"
-                        class="w-100">
-                </div>
-                <div class="col-4 pb-4">
-                    <img
-                        src="https://instagram.fbeg4-1.fna.fbcdn.net/v/t51.2885-15/e35/80567208_1398308817014780_3527894357366973531_n.jpg?_nc_ht=instagram.fbeg4-1.fna.fbcdn.net&_nc_cat=108&_nc_ohc=kvi14NKw_uUAX9oDx2o&oh=63312a6eea7056ebcc4d8ae88d0a230b&oe=5EB586AD"
-                        class="w-100">
-                </div>
+
+                @foreach($user->posts as $post)
+                    <div class="col-4 pb-4">
+                        <img src="{{$post->image}}" class="w-100">
+                    </div>
+                @endforeach
             </div>
         </div>
+    </div>
 @endsection

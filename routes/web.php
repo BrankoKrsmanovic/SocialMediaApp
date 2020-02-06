@@ -21,3 +21,7 @@ Auth::routes();
 Route::get('/profile/{user}', 'ProfilesController@index');
 Route::get('/profile/{user}/edit', 'ProfilesController@edit');
 Route::patch('/profile/{user}', 'ProfilesController@update');
+
+Route::get('/post/create', 'PostsController@create');
+Route::post('/post', 'PostsController@store');
+Route::get('/post/{post}', 'PostsController@show');
