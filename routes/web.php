@@ -25,3 +25,6 @@ Route::patch('/profile/{user}', 'ProfilesController@update');
 Route::get('/post/create', 'PostsController@create');
 Route::post('/post', 'PostsController@store');
 Route::get('/post/{post}', 'PostsController@show');
+
+Route::post('/api/follow/{user}', 'ApiController@followUser');
+

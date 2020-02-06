@@ -20,12 +20,16 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('follow-button', require('./components/FollowButton.vue').default);
+Vue.component('profile-stats', require('./components/ProfileStats.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+
+export const EventBus = new Vue();
 
 const app = new Vue({
     el: '#app',
