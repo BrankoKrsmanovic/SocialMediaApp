@@ -22,6 +22,7 @@ window.Vue = require('vue');
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('follow-button', require('./components/FollowButton.vue').default);
 Vue.component('profile-stats', require('./components/ProfileStats.vue').default);
+Vue.component('single-post', require('./components/SinglePost.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
