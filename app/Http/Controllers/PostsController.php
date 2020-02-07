@@ -26,6 +26,29 @@ class PostsController extends Controller
         return view('posts.create');
     }
 
+    public function storeRandom()
+    {
+        $data = request()->validate([
+            'caption' => 'required',
+            'url' => 'required'
+        ]);
+
+
+        $image = Image::make(request('url'))->fit(1200, 1200)->encode('jpg');
+        $hash = md5($image->__toString());
+        $path = "storage/uploads/{$hash}.jpg";
+
+        $image->save(public_path($path));
+
+
+        auth()->user()->posts()->create([
+            'caption' => $data['caption'],
+            'image' => '/storage/uploads/' . $hash . '.jpg',
+        ]);
+
+        return [ 'profile' => '/profile/' . auth()->user()->id];
+    }
+
     public function store()
     {
         $data = request()->validate([
@@ -44,6 +67,11 @@ class PostsController extends Controller
         ]);
 
         return redirect('/profile/' . auth()->user()->id);
+    }
+
+    public function random()
+    {
+        return view('posts.random');
     }
 
     public function show(Post $post)
