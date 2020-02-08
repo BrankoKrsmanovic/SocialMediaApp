@@ -48,7 +48,7 @@
         created() {
             axios.get('/api/like/' + this.postId)
                 .then(res => {
-                    this.noOfLikes = res.data;
+                    this.noOfLikes = res.data.no_of_likes;
                     console.log(res.data);
                 })
                 .catch(err => console.log(err));

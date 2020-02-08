@@ -26,7 +26,7 @@ class ApiController extends Controller
 
     public function getNumberOfLikes(Post $post)
     {
-        return $post->usersWhoLiked->count();
+        return ['no_of_likes' => $post->usersWhoLiked->count()];
     }
 
     public function destroy(Post $post)
@@ -35,7 +35,7 @@ class ApiController extends Controller
 
         $post->delete();
         if (!Post::where('id', '=', $post->id)->exists())
-            return ['status' => 'success'];
+            return ['status' => 'deleted'];
         return ['status' => 'failed'];
     }
 

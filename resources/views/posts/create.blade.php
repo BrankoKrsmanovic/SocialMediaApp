@@ -22,7 +22,7 @@
 
                         <input id="caption" type="text"
                                class="form-control @error('caption') is-invalid @enderror" name="caption"
-                               value="{{ old('caption') }}" autocomplete="caption" autofocus autocomplete="off">
+                               value="{{ old('caption') }}" autocomplete="off" autofocus autocomplete="off">
 
                         @error('caption')
                         <span class="invalid-feedback" role="alert">

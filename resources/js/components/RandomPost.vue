@@ -21,10 +21,12 @@
             <div class="row pt-4">
                 <img :src="url" v-show="show" style="width: 500px; height: 500px">
             </div>
-
-            <button @click="saveRandomPost" class="btn btn-primary mt-4" v-show="show && caption.length > 0">Add New
-                Post
-            </button>
+            <div class="row">
+                <button @click="saveRandomPost" class="btn btn-primary mt-4" v-show="show && caption.length > 0">Add New
+                    Post
+                </button>
+            </div>
+            <spinner v-show="spinner"/>
         </div>
     </div>
 </template>
@@ -42,15 +44,18 @@
                 url: '',
                 show: false,
                 caption: '',
+                spinner: false,
             }
         },
 
         methods: {
             getRandomImage() {
+                this.spinner = true;
                 axios.get(`https://picsum.photos/id/${Math.floor(Math.random() * 1000)}/info`)
                     .then(response => {
                         this.url = response.data.download_url + ".jpg";
                         this.show = true;
+                        this.spinner = false;
                         console.log(response.data.download_url);
                     })
                     .catch(error => {
@@ -60,6 +65,7 @@
             },
 
             saveRandomPost() {
+                this.spinner = true;
                 axios.post('/post/random', {
                     caption: this.caption,
                     url: this.url,
@@ -73,3 +79,4 @@
         },
     }
 </script>
+
